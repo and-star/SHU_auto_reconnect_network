@@ -697,11 +697,8 @@ RSAUtils.setMaxDigits(130);
 
 RSAUtils.encrypt = function(password, publicKeyExponent, publicKeyModulus){
     var key = new RSAUtils.getKeyPair(publicKeyExponent, "", publicKeyModulus);
-    //return key;
 	var passwordEncry = RSAUtils.encryptedString(key,password);//这里要对字符串进行反转，否则解密的密码是反的
-    //var passwordEncry = 1;
 	return passwordEncry;
-	//process.stdout.write(passwordEncry)
 
 }
 
@@ -711,9 +708,7 @@ var queryString = process.argv[4];
 var exponent = process.argv[5];
 var modulus = process.argv[6];
 
-// var pass = "86oahnehoW"
-// var modulus = "94dd2a8675fb779e6b9f7103698634cd400f27a154afa67af6166a43fc26417222a79506d34cacc7641946abda1785b7acf9910ad6a0978c91ec84d40b71d2891379af19ffb333e7517e390bd26ac312fe940c340466b4a5d4af1d65c3b5944078f96a1a51a5a53e4bc302818b7c9f63c4a1b07bd7d874cef1c3d4b2f5eb7871"
-// var exponent = "10001"
+
 
 var password = RSAUtils.encrypt(pass, exponent, modulus)
 var service = "shu"
